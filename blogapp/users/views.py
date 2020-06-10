@@ -2,6 +2,7 @@ from django.shortcuts import render
 # To redirect
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
+from .forms import UserRegisterForm
 # To display flash messages
 from django.contrib import messages
 
@@ -9,10 +10,10 @@ from django.contrib import messages
 
 # Register view
 def register(request):
-
     if request.method == "POST":
-        form = UserCreationForm(request.POST)    
+        form = UserRegisterForm(request.POST)    
         if form.is_valid():
+            form.save() # thats it!
             username = form.cleaned_data.get('username')
             # Flash message
             messages.success(request, f'Account Created for {username}!')
@@ -20,7 +21,7 @@ def register(request):
 
 
     else:
-        form = UserCreationForm()
+        form = UserRegisterForm()
 
     return render(request, 'users/register.html',{'form':form})
 
