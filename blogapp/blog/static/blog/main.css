@@ -1,19 +1,19 @@
 body {
-    background: #fafafa;
-    color: #333333;
+    background: #1a1919;
+    color: #ebe2e2;
     margin-top: 5rem;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    color: #444444;
-  }
   
   ul {
     margin: 0;
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #2b2b2b;
+    border-bottom: 1px solid #00e426
+  
+  
   }
   
   .site-header .navbar-nav .nav-link {
@@ -29,24 +29,37 @@ body {
   }
   
   .content-section {
-    background: #ffffff;
+    background: #353535;
     padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
+    border: 1px solid #000000;
+    border-radius: 10px;
     margin-bottom: 20px;
   }
+  .content-section h3{
+    color:white;
+  }
+  .content-section p{
+    color:#bdbdbd !important;
+  }
+
+  .content-section .list-group-item{
+    color:#424242;
+  }
+  
+
   
   .article-title {
-    color: #444444;
+    color: #ffffff;
   }
   
   a.article-title:hover {
-    color: #428bca;
+    color: #00e426;
     text-decoration: none;
   }
   
   .article-content {
     white-space: pre-line;
+
   }
   
   .article-img {
@@ -58,11 +71,18 @@ body {
   .article-metadata {
     padding-bottom: 1px;
     margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
+    border-bottom: 1px solid #00e426
+  }
+  .article-metadata a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .article-metadata small {
+    color: #acacac !important;
   }
   
   .article-metadata a:hover {
-    color: #333;
+    color: #00e426;
     text-decoration: none;
   }
   
