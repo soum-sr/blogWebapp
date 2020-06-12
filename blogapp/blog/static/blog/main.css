@@ -27,6 +27,12 @@ body {
   .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
   }
+  .nav-user{
+    color: #cbd5db;
+    display:block;
+    padding:.5rem 1rem;
+    margin-bottom:0;
+  }
   
   .content-section {
     background: #353535;
