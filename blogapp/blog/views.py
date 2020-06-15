@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
 
 # Create your views here.
@@ -22,11 +23,31 @@ posts = [
     },
 ]
 
+# Classed based views
+
 def home(request):
     context = {
         'posts':Post.objects.all(),
     }
     return render(request, 'blog/home.html', context)
     
+class PostListView(ListView):
+    model = Post # The model we are working on 
+    template_name = 'blog/home.html' # <app>/<model>_<viewtype>.html {default one}
+    context_object_name = 'posts' # Value p assed to the template
+    ordering = ['-date_posted'] # It decides the sorting
+
+class PostDetailView(DetailView):
+    model = Post # The model we are working on 
+
+
+class PostCreateView(CreateView):
+    model = Post # The model we are working on 
+    fields = ['title', 'content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 def about(request):
     return render(request, 'blog/about.html',{'title':'About'})
