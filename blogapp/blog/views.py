@@ -32,6 +32,7 @@ posts = [
 #     }
 #     return render(request, 'blog/home.html', context)
     
+
 # Classed based views
 
 class PostListView(ListView):
@@ -39,6 +40,8 @@ class PostListView(ListView):
     template_name = 'blog/home.html' # <app>/<model>_<viewtype>.html {default one}
     context_object_name = 'posts' # Value p assed to the template
     ordering = ['-date_posted'] # It decides the sorting
+    paginate_by = 2
+
 
 class PostDetailView(DetailView):
     model = Post # The model we are working on 
