@@ -35,7 +35,6 @@ posts = [
     
 
 # Classed based views
-
 class PostListView(ListView):
     model = Post # The model we are working on 
     template_name = 'blog/home.html' # <app>/<model>_<viewtype>.html {default one}
