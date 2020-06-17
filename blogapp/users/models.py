@@ -11,8 +11,8 @@ class Profile(models.Model):
 
     # Overwrite save method
     # This is a preexisting method
-    def save(self):
-        super().save()
+    def save(self, *args, **kwargs):
+        super(Profile, self).save(*args, **kwargs)
 
         # load the image
         img = Image.open(self.image.path)
